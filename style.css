@@ -1,32 +1,19 @@
-.container{
+.container {
     margin: 50px auto;
     width: 600px;
+    border: 1px solid #333;
     padding: 20px;
-    border: solid black 1px;
-    border-radius: 10px;
-    background-color: #eee;
-}
+border-radius: 10px;
+background-color: #eee;
 
-.form{
-    border: solid black 1px;
-    border-radius: 10px;
+}
+.form {
+    border: 1px solid #333;
     padding: 20px;
+    border-radius: 10px;
     background-color: #ddd;
+line-height: 2em;
 }
-
-#jel {
-    color: green;
-}
-
-#fogyasztás{
-    margin-left: 46px;
-    margin-bottom: 5px;
-}
-
-#ut{
-    margin-left: 102px;
-   margin-top: 5px;
-}
-button{
-    margin-top: 5px;
+#megoldas {
+color: green;
 }
