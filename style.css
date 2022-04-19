@@ -1,34 +1,20 @@
-.container{
+.container {
     margin: 50px auto;
     width: 600px;
+    border: 1px solid #333;
     padding: 20px;
-    border: solid black 1px;
     border-radius: 10px;
     background-color: #eee;
-}
-
-.form{
-    border: solid black 1px;
-    border-radius: 10px;
+  }
+  
+  .form {
+    border: 1px solid #333;
     padding: 20px;
+    border-radius: 10px;
     background-color: #ddd;
-}
-
-#megoldas {
+    line-height: 2em;
+  }
+  
+  .megoldas {
     color: green;
-}
-
-#fogyasztas{
-    margin-left: 57px;
-    margin-bottom: 5px;
-}
-
-#tank{
-    margin-left: 11px;
-    margin-bottom: 5px;
-}
-
-#ut{
-    margin-left: 112px;
-    margin-bottom: 5px;
-}
+  }

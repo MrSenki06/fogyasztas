@@ -1,74 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fogyasztás</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fogyasztás</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>k_infoism_05okt</h1>
-        <h2>II.</h2>
-        
-        <h3>2. feladat:</h3>
-        
-        <p>Egy autó üzemanyag-fogyasztását olyan módon adjuk meg, hogy 100 kilométer távolságú út megtételéhez hány liter benzinre van szüksége.</p>
-        <p>Készítsen programot, amely billentyűzetről beolvassa egy autó fogyasztását, üzemanyagtartályának űrtartalmát, valamint a jármű által megteendő út hosszát, és a fenti adatok alapján megállapítja, hogy kell-e tankolnia az autónak az adott hosszúságú út során amennyiben tele tankkal indult útnak!</p>
-        <p>A program megállapításának megfelelően írja képernyőre az alábbi mondatok közül a megfelelőt!</p>
-           
-        <ul>
-        <li>"Az út megtehető tankolás nélkül."</li>
-        <li>"Az út során tankolni kell!"</li>
-        </ul>
-           
-        
-        
-        <p>Megjegyzés: Ha a fogyasztás F és az üzemanyagtartály térfogata V, akkor az autó egy tank benzinnel V*100/F kilométert tesz meg.</p>
-        
-        <hr>
-        <h3>Megoldás</h3>
-        <div class="form">
-            <form action="">
 
-    <label for="fogyasztas">Fogyasztás:</label>
-    <input type="text" name="fogyasztas" id="fogyasztas">
-    L/100km
-<br>
-    <label for="tank">Üzemanyagtartály:</label>
-    <input type="text" name="tank" id="tank">
-    L
-<br>
-    <label for="ut">Út:</label>
-    <input type="text" name="ut" id="ut">
-    Km
-<br>
-    1. <input type="submit" value="Számolás" onclick="return szamol();"> <br>  
-        </div>
+  <div class="container">
+    <h1>k_infoism_05okt</h1>
+    <h2>II.</h2>
+    
+    <h3>2. feladat:</h3>
+    
+    <p>Egy autó üzemanyag-fogyasztását olyan módon adjuk meg, hogy 100 kilométer távolságú út megtételéhez hány liter benzinre van szüksége.</p>
+    <p>Készítsen programot, amely billentyűzetről beolvassa egy autó fogyasztását, üzemanyagtartályának űrtartalmát, valamint a jármű által megteendő út hosszát, és a fenti adatok alapján megállapítja, hogy kell-e tankolnia az autónak az adott hosszúságú út során amennyiben tele tankkal indult útnak!</p>
+    <p>A program megállapításának megfelelően írja képernyőre az alábbi mondatok közül a megfelelőt!</p>
+    
+    <ul>
+      <li>"Az út megtehető tankolás nélkül."</li>
+      <li>"Az út során tankolni kell!"</li>
+    </ul>
+    
+    <p>Megjegyzés: Ha a fogyasztás F és az üzemanyagtartály térfogata V, akkor az autó egy tank benzinnel V*100/F kilométert tesz meg.</p>
+    
+    <hr>
+    <p>
+      Lehetőségek:
+      <ul>
+        <li><code>submit</code> típusú gomb elküldi az űrlapot, úrajtöltődik az oldal, és eltűnnek a beírt értékek, ezért gondoskodni kell a küldés megakadályozásáról</li>
+        <li>sima <code>button</code> típusú gomb használatával, ami nem küldi el az űrlapot</li>
+      </ul>
+    </p>
+    <h3>Megoldás 1.</h3>
+    <p>
+      <code>onclick</code> esemény használatával, és a <code>szamolas1();</code> függvényből való <code>hamis (false)</code> érték visszaadásával.
+    </p>
+    <div class="form">
+      <form>
+        <label for="fogyasztas1">Fogyasztás:</label>
+        <input type="text" name="fogyasztas1" id="fogyasztas1"> L/100km
+        <br>
+        <label for="tank1">Üzemanyagtartály:</label>
+        <input type="text" name="tank1" id="tank1"> L
+        <br>
+        <label for="ut1">Út:</label>
+        <input type="text" name="ut1" id="ut1"> km
+        <br>
+        <input type="submit" value="Számol" onclick="return szamolas1();">
+      </form>
+    </div>
+    <p id="megoldas1" class="megoldas">?</p>
 
-        <div class="form">
-            <form action="">
-
-    <label for="fogyasztas">Fogyasztás:</label>
-    <input type="text" name="fogyasztas" id="fogyasztas">
-    L/100km
-<br>
-    <label for="tank">Üzemanyagtartály:</label>
-    <input type="text" name="tank" id="tank">
-    L
-<br>
-    <label for="ut">Út:</label>
-    <input type="text" name="ut" id="ut">
-    Km
-<br>
-    2. <input type="submit" value="Számolás"> 
-        </div>
-    </form>
-        <p id="megoldas">?</p>
+    <hr>
+    <h3>Megoldás 2.</h3>
+    <p>
+      <code>addEventListener()</code> és <code>preventDefault()</code> függvények használatával.
+    </p>
+    <div class="form">
+      <form>
+        <label for="fogyasztas2">Fogyasztás:</label>
+        <input type="text" name="fogyasztas2" id="fogyasztas2"> L/100km
+        <br>
+        <label for="tank2">Üzemanyagtartály:</label>
+        <input type="text" name="tank2" id="tank2"> L
+        <br>
+        <label for="ut2">Út:</label>
+        <input type="text" name="ut2" id="ut2"> km
+        <br>
+        <input type="submit" value="Számol" id="szamolas2">
+      </form>
     </div>
 
-    <Script src="script.js"></Script>
+    <p id="megoldas2" class="megoldas">?</p>
 
+    <hr>
+    <h3>Megoldás 3.</h3>
+    <p>
+      sima <code>button</code> típusú gomb használatával
+    </p>
+    <div class="form">
+      <form>
+        <label for="fogyasztas3">Fogyasztás:</label>
+        <input type="text" name="fogyasztas3" id="fogyasztas3"> L/100km
+        <br>
+        <label for="tank3">Üzemanyagtartály:</label>
+        <input type="text" name="tank3" id="tank3"> L
+        <br>
+        <label for="ut3">Út:</label>
+        <input type="text" name="ut3" id="ut3"> km
+        <br>
+        <input type="button" value="Számol" id="szamolas3">
+      </form>
+    </div>
+
+    <p id="megoldas3" class="megoldas">?</p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+           
+        
+        
+        
